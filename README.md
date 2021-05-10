@@ -54,7 +54,7 @@ Create manually the role to assume on environment (Prod and Staging) account:
 
 ```
 
-## Setup your workspace configuration with tfvars files for each environment
+## Setup workspace configuration with .tfvars files for each environment
 
 ```
 # Prod.tfvars - Production Environment
@@ -71,7 +71,7 @@ aws_account = "<AWS_ACCOUNT_ID>"
 aws_role   = "<IAM_CROSS_ACCOUNT_ROLE>"
 ```
 
-- Steup provider with assume role:
+## Steup provider with assume role
 ```
 # Main.tf file
 
@@ -94,7 +94,7 @@ variable "provider_env_roles" {
 }
 ```
 
-- Create Terraform Workspaces
+## Create Terraform Workspaces
 ```
 % terraform init
 
