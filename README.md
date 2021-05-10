@@ -7,9 +7,9 @@
 
 
 
-In this repo, I'll create several environments in different AWS accounts, one account for each environment, creating from AWS DevOps/Root account, like the diagram below:
+* Create several environments in different AWS accounts, one account for each environment, creating from AWS DevOps/Root account, like the diagram below:
 
-![AWS Diagram](https://user-images.githubusercontent.com/35708820/117672283-b3c21e00-b177-11eb-8208-d3a005dfea3d.png)
+<img src="![AWS Diagram](https://user-images.githubusercontent.com/35708820/117672283-b3c21e00-b177-11eb-8208-d3a005dfea3d.png)" alt="drawing" width="200"/>
 
 
 - Create IAM roles
