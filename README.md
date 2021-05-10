@@ -11,7 +11,7 @@
 
 ![AWS Diagram](https://user-images.githubusercontent.com/35708820/117672283-b3c21e00-b177-11eb-8208-d3a005dfea3d.png)
 
-- Create IAM roles
+## Create IAM roles
 
 > DevOps Account:
 
@@ -54,7 +54,7 @@ Create manually the role to assume on environment (Prod and Staging) account:
 
 ```
 
-- Setup your workspace configuration with tfvars files for each environment
+## Setup your workspace configuration with tfvars files for each environment
 
 ```
 # Prod.tfvars - Production Environment
