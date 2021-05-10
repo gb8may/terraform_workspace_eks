@@ -17,7 +17,7 @@ variable "instance_type" {
 variable "provider_env_roles" {
   type    = map
   default = {
-    "staging" = ""
+    "staging" = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<IAM_ROLE>"
     "prod"    = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<IAM_ROLE>"
   }
 }
