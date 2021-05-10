@@ -53,7 +53,7 @@ Create manually the role to assume on environment (Prod and Staging) account:
 
 ```
 
-- Setup your environments with tfvars files for each env.
+- Setup your workspace configuration with tfvars files for each environment
 
 ```
 # Prod.tfvars - Production Environment
@@ -91,4 +91,17 @@ variable "provider_env_roles" {
     "prod"    = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<IAM_ROLE>"
   }
 }
+```
+
+- Create Terraform Workspaces
+```
+% terraform init
+
+% terraform workspace new prod
+% terraform workspace new staging
+% terraform workspace select staging
+
+% terraform plan --var-file staging.tfvars
+
+% terraform apply --var-file staging.tfvars
 ```
