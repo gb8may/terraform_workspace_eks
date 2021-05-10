@@ -1,5 +1,5 @@
 <h1 align="center"> 
-	Terraform Workspace with EKS Kubernetes cluster
+	Terraform Workspace & EKS
 </h1>
 
 
