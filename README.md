@@ -33,7 +33,8 @@ Add the assume role policy on DevOps/Root account
 ```
 Attach the policy!
 
-Prod and Staging Account:
+> Prod and Staging Account:
+
 Create manually the role to assume on environment (Prod and Staging) account:
 
 ```
