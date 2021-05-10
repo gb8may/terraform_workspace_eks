@@ -1,4 +1,6 @@
-# terraform_workspace_eks
+<h1 align="center"> 
+	Terraform Workspace with EKS Kubernetes cluster
+</h1>
 
 
 ### 🛠 Tools:
