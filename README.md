@@ -107,4 +107,4 @@ variable "provider_env_roles" {
 % terraform apply --var-file staging.tfvars
 ```
 
-~~I used Terraform v0.13.7 in this lab.~~
+###### Terraform version used: v0.13.7
