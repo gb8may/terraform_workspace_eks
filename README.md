@@ -13,6 +13,46 @@
 
 - Create IAM roles
 
+DevOps Account:
+
+Add the assume role policy on DevOps/Root account
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "sts:AssumeRole"
+      ],
+      "Resource": "arn:aws:iam::<PROD OR STAGING ACCOUNT ID>:role/<ROLE NAME>"
+    }
+  ]
+}
+
+```
+Attach the policy!
+
+Prod and Staging Account:
+Create manually the role to assume on environment (Prod and Staging) account:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<DEVOPS/ROOT ACCOUNT>:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {}
+    }
+  ]
+}
+
+```
+
 - Setup your environments with tfvars files for each env.
 
 ```
@@ -28,4 +68,27 @@ aws_role   = "<IAM_CROSS_ACCOUNT_ROLE>"
 aws_region  = "us-east-1"
 aws_account = "<AWS_ACCOUNT_ID>"
 aws_role   = "<IAM_CROSS_ACCOUNT_ROLE>"
+```
+
+- Steup provider with assume role:
+```
+# Main.tf file
+
+provider "aws" {
+  region = var.aws_region
+  assume_role {
+    role_arn = var.provider_env_roles[terraform.workspace]
+  }
+}
+```
+```
+# Variables.tf file
+
+variable "provider_env_roles" {
+  type    = map
+  default = {
+    "staging" = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<IAM_ROLE>"
+    "prod"    = "arn:aws:iam::<AWS_ACCOUNT_ID>:role/<IAM_ROLE>"
+  }
+}
 ```
