@@ -108,3 +108,14 @@ variable "provider_env_roles" {
 ```
 
 ###### Terraform Version: v0.13.7
+
+```
+terraform {
+  backend "s3" {
+    bucket               = "<BUCKET_NAME>"
+    workspace_key_prefix = "<PROJECT_NAME>"
+    key                  = "<FILE.tfstate>"
+    region               = "us-east-1"
+  }
+}
+```
