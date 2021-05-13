@@ -96,15 +96,15 @@ variable "provider_env_roles" {
 
 ## Create Terraform Workspaces
 ```
-% terraform init
+$ terraform init
 
-% terraform workspace new prod
-% terraform workspace new staging
-% terraform workspace select staging
+$ terraform workspace new prod
+$ terraform workspace new staging
+$ terraform workspace select staging
 
-% terraform plan --var-file staging.tfvars
+$ terraform plan --var-file staging.tfvars
 
-% terraform apply --var-file staging.tfvars
+$ terraform apply --var-file staging.tfvars
 ```
 
 ###### Terraform Version: v0.13.7
